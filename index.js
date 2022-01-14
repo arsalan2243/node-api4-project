@@ -9,10 +9,11 @@ server.get("/api/hello", (req, res) => {
   res.json({ message: "api is working" })
 })
 server.use("*", (req, res) => {
-  res.send("<h1>hello, there!</h1>")
+  res.send("<h1>hello world!</h1>")
 })
 server.use((err, req, res, next) => {
   //eslint-disable-line
+
   res.status(500).json({ message: err.message, stack: err.stack })
 })
 
